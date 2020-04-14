@@ -1,6 +1,5 @@
 const password_is_valid = require("../src/password_Checker")
-let password = new password_is_valid
-
+let password = password_is_valid
 //password_is_valid
 describe("password is valid function", () => {
   it(`should return password is Valid`, () => {
