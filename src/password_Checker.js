@@ -6,7 +6,7 @@ function password_is_valid(password) {
         if (!password.match(/[a-z]/g)) throw `password should have one lower character`
         if (!password.match(/[A-Z]/g)) throw `password should have uppercase letters`
         if (!password.match(/[{(!@#$%^&*.,\')}]/g)) throw `password should have atleast one special character`
-        if (!password.match(/[0-9]/g)) throw `password should have have atleast one number`
+        if (!password.match(/[0-9]/g)) throw `password should have atleast one number`
 
         return `password is valid!`;
     } catch (error) {
@@ -17,7 +17,7 @@ function password_is_valid(password) {
 }
 
 // console.log(password_is_valid("Lavis@97"));
-console.log(password_is_valid("Lavisa@97"));
+console.log(password_is_valid("Lavisa@88"));
 
 function passwordIsOk(password) {
 
@@ -37,6 +37,7 @@ function passwordIsOk(password) {
  }
 
 // console.log(passwordIsOk("laido"));
+
 
 module.exports = {password_is_valid, passwordIsOk}
    
