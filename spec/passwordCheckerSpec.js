@@ -1,5 +1,8 @@
 const password_is_valid = require("../src/password_Checker")
 let password = password_is_valid.password_is_valid
+
+const passwordIsOk = require("../src/password_Checker")
+let passOk = passwordIsOk.passwordIsOk
 //password_is_valid
 
 describe("password is valid function", () => {
@@ -23,24 +26,15 @@ describe("password is valid function", () => {
  
 });
 
-//passwordIsOkay
-// describe("password is ok function", () => {
-//   it(`should return password is Ok`, () => {
-//     expect(passwordIsOkay("")).toThrow("password is not okay!");
-//   });
-//   it(`should return password is ok`, () => {
-//     expect(passwordIsOkay("s")).toThrow("password is not okay!");
-//   });
-//   it(`should return password is ok`, () => {
-//     expect(passwordIsOkay("laidobeats")).toThrow("password is not okay!");
-//   });
-//   it(`should return password is ok`, () => {
-//     expect(passwordIsOkay("Laidobeats")).toThrow("password is not okay!");
-//   });
-//   it(`should return password is ok`, () => {
-//     expect(passwordIsOkay("L@idobeats")).toThrow("password is not okay!");
-//   });
-//   it(`should return password is `, () => {
-//     expect(passwordIsOkay("L@id0beats97")).toBe("password is okay!")
-//   });
-// });
+describe("password is ok function", () => {
+  it(`should return true`, () => {
+    expect(passOk("laidobeats")).toBe(true)
+  });
+  it(`should return false`, () => {
+    expect(passOk("l")).toBe(false)
+  });
+  it(`should return password is never OK`, () => {
+    expect(passOk("")).toBe("password is never OK")
+  });
+  
+});

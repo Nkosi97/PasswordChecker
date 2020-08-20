@@ -16,28 +16,16 @@ function password_is_valid(password) {
 
 }
 
-// console.log(password_is_valid("Lavis@97"));
-console.log(password_is_valid("Lavisa@88"));
-
 function passwordIsOk(password) {
-
-    try {
-        if (password == "") throw `password is not okay!`
-        if (password.length < 8) throw `password is not okay!`
-        if (password.match(/[a-z]/g)) throw `password is not okay!`
-        if (password.match(/[A-Z]/g)) throw `password is not okay!`
-        if (password.match(/[{(!@#$%^&*.,\')}]/g)) throw `password is not okay!`
-        if (password.match(/[0-9]/g)) throw `password is not okay!`
-
-        return `password is okay!`;
-    } catch (error) {
-        console.error(`${error}`)
-    }
-    return password
+        if(password !== "" && password.length > 8 && password.match(/[a-z]/g)){
+        return true;
+        }else if(password == "" && password.length < 8){
+         return `password is never OK`;
+        }
+        return false;
  }
 
-// console.log(passwordIsOk("laido"));
-
+console.log(passwordIsOk("laidobeats"));
 
 module.exports = {password_is_valid, passwordIsOk}
    
