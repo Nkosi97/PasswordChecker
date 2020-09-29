@@ -17,7 +17,7 @@ describe("password is valid function", () => {
     expect(password("Lkjuhgyf")).toBe("Lkjuhgyf")
   });
   it(`should throw password is not Valid`, () => {
-    expect(password("l*dobeatZ")).toBe("l*dobeatZ")
+    expect(password("l*dobeatS")).toBe("l*dobeatS")
   });
  
   it(`should return password is Valid`, () => {
