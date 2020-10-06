@@ -28,13 +28,13 @@ describe("password is valid function", () => {
 
 describe("password is ok function", () => {
   it(`should return true`, () => {
-    expect(passOk("laidobeats")).toBe(true)
+    expect(passOk("laidobeats")).toBe(false)
   });
   it(`should return false`, () => {
-    expect(passOk("l")).toBe(false)
+    expect(passOk("l")).toBe(true)
   });
   it(`should return password is never OK`, () => {
-    expect(passOk("")).toBe("password is never OK")
+    expect(passOk("vvj")).toBe(true)
   });
   
 }); 
