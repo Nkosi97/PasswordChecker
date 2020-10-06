@@ -1,20 +1,20 @@
-// function password_is_valid(password) {
+function password_is_valid(password) {
 
-//     try {
-//         if (password == "") throw `password should exist`
-//         if (password.length < 8) throw `password should atleast have 8 characters`
-//         if (!password.match(/[a-z]/g)) throw `password should have one lower character`
-//         if (!password.match(/[A-Z]/g)) throw `password should have uppercase letters`
-//         if (!password.match(/[{(!@#$%^&*.,\')}]/g)) throw `password should have atleast one special character`
-//         if (!password.match(/[0-9]/g)) throw `password should have atleast one number`
+    try {
+        if (password == "") throw `password should exist`
+        if (password.length < 8) throw `password should atleast have 8 characters`
+        if (!password.match(/[a-z]/g)) throw `password should have one lower character`
+        if (!password.match(/[A-Z]/g)) throw `password should have uppercase letters`
+        if (!password.match(/[{(!@#$%^&*.,\')}]/g)) throw `password should have atleast one special character`
+        if (!password.match(/[0-9]/g)) throw `password should have atleast one number`
 
-//         return `password is valid!`;
-//     } catch (error) {
-//         console.error(`Invalid password: ${error}`)
-//     }
-//     return password
+        return `password is valid!`;
+    } catch (error) {
+        console.error(`Invalid password: ${error}`)
+    }
+    return password
 
-// }
+}
 
 function passwordIsOk(password) {
    const passArr = [!password.match(/[A-Z]/g), password.length < 8, !password.match(/[a-z]/g)];
@@ -27,11 +27,6 @@ function passwordIsOk(password) {
        return false;
    }
  }
- console.log(passwordIsOk("LAAAAAAAAKI"));
- console.log(passwordIsOk("olo"));
- console.log(passwordIsOk("Ljhhuin@a"));
 
-
-
-// module.exports = {password_is_valid, passwordIsOk}
+module.exports = {password_is_valid, passwordIsOk}
    
