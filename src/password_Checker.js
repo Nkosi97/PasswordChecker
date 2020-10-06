@@ -1,4 +1,4 @@
-function password_is_valid(password) {
+function passwordIsValid(password) {
 
     try {
         if (password == "") throw `password should exist`
@@ -28,5 +28,5 @@ function passwordIsOk(password) {
    }
  }
 
-module.exports = {password_is_valid, passwordIsOk}
+module.exports = {passwordIsValid, passwordIsOk}
    
