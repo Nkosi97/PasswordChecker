@@ -2,7 +2,7 @@ function passwordIsValid(password) {
 
     try {
         if (password == "") throw `password should exist`
-        if (password.length < 8) throw `password should atleast have 8 characters`
+        if (password.length < 8) throw `password should at least have 8 characters`
         if (!password.match(/[a-z]/g)) throw `password should have one lower character`
         if (!password.match(/[A-Z]/g)) throw `password should have uppercase letters`
         if (!password.match(/[{(!@#$%^&*.,\')}]/g)) throw `password should have atleast one special character`
@@ -13,19 +13,25 @@ function passwordIsValid(password) {
         console.error(`Invalid password: ${error}`)
     }
     return password
-
 }
 
 function passwordIsOk(password) {
-   const passArr = [!password.match(/[A-Z]/g), password.length < 8, !password.match(/[a-z]/g)];
+   var conditions = 0 
+   const passArr = 
+   [password !== "",password.match(/[A-Z]/g),
+    password.length > 8, password.match(/[a-z]/g),
+    password.match(/\d/g),password.match(/\W/g)];
    for(let i = 0; i < passArr.length; i++){
-       if(passArr[i] == password){
-           return true;
-       }else if(passArr[1] || passArr[2] == password){
-        return true;
+       if(passArr[i]){
+            conditions++
+       }if(passArr[0] && passArr[2] !== true){
+        return `password is never OK`;
        }
-       return false;
+        if(conditions >= 3){
+            return true
+        }
    }
+   return false;
  }
 
 module.exports = {passwordIsValid, passwordIsOk}

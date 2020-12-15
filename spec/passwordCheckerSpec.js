@@ -1,61 +1,52 @@
-const passwordIsValid = require("../src/password_Checker")
-let password = passwordIsValid.passwordIsValid
+const myTest = require("../src/password_Checker")
+let password = myTest.passwordIsValid
+let passOk = myTest.passwordIsOk
 
-const passwordIsOk = require("../src/password_Checker")
-let passOk = passwordIsOk.passwordIsOk
+describe("password is valid function", () => {
+  it(`should should exist`, () => {
+    expect(() => {password('').toThrow("Password should exist")});
+    });
 
-describe("password is valid", function() {
-    it( "it should throw an error", function(){
-      expect(() => {password = passwordIsValid.passwordIsValid
-    ('').toThrow("Password shoul exist")})
-    })  
-  
-    describe("password is valid", function() {
-      it( "it should test if password is longer than 8 characters", function(){
-        expect(() => {password('Laido').toThrow("password should be longer than 8 characters")})
-      })
-    }); 
-  
-      describe("password is valid", function() {
-        it( "it should test if the password has at least one lowercase letter", function(){
-          expect(() => {password('THANDOO').toThrow("password should have at least one lowercase letter")})
-        })
-      });  
-  
-   describe("password is valid", function() {
-    it( "it should test if the password has at least one uppercase letter", function(){
-      expect(() => {password('lukhanyo').toThrow("password should have at least one uppercase letter")})
+  it( "should be longer than 8 characters", function(){
+    expect(() => {password('Laido').toThrow("password should be longer than 8 characters")})
+    })
+
+  it( "should have at least one lowercase letter", function(){
+    expect(() => {password('THANDOO').toThrow("password should have at least one lowercase letter")})
+    })
+
+  it( "should have at least one uppercase letter", function(){
+    expect(() => {password('lukhanyo').toThrow("password should have at least one uppercase letter")})
+    })
+
+  it( "should have at least one digit", function(){
+    expect(() => {password('Lethabo').toThrow("password should  at least have  one digit")})
+    })
+
+  it( "should have at least one special character", function(){
+    expect(() => {password('Luthando').toThrow("password should have at least one special character")})
     })
-  });  
-  
-  describe("password is valid", function() {
-    it( "it should test if the password has at least one digit", function(){
-      expect(() => {password('Lethabo').toThrow("password should  at least have  one digit")})
+
+  it( "should meet all the requirements", function(){
+    expect(() => {password('Lukhanyo#@2').toThrow("password is valid")})
     })
-  }); 
-  
-  describe("password is valid", function() {
-    it( "it should test if the password has at least one special character", function(){
-      expect(() => {password('Luthando').toThrow("password should have at least one special character")})
-    })
-  });  
-  
-  describe("password is ok", function() {
-    it( "it should test if the password meets all the requirements", function(){
-      expect(() => {password('Lukhanyo#@2').toThrow("password is valid")})
-    })
-  }); 
+
+}); 
 
 describe("password is ok function", () => {
   it(`should return true`, () => {
-    expect(passOk("laidobeats")).toBe(false)
+    expect(passOk("Lavisac#19")).toBe(true)
   });
+
   it(`should return false`, () => {
-    expect(passOk("l")).toBe(true)
+    expect(passOk("")).toBe(false)
   });
+
   it(`should return password is never OK`, () => {
-    expect(passOk("vvj")).toBe(true)
+    expect(passOk("Lavisac")).toBe(`password is never OK`)
   });
+
 });
-}); 
+
+
 
