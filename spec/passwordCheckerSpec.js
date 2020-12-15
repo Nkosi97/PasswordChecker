@@ -1,40 +1,52 @@
-const password_is_valid = require("../src/password_Checker")
-let password = password_is_valid.password_is_valid
-
-const passwordIsOk = require("../src/password_Checker")
-let passOk = passwordIsOk.passwordIsOk
-//password_is_valid
+const myTest = require("../src/password_Checker")
+let password = myTest.passwordIsValid
+let passOk = myTest.passwordIsOk
 
 describe("password is valid function", () => {
-  it(`should throw password is not Valid`, () => {
-    expect(password("")).toBe("")
-  });
-  it(`should throw password is not Valid`, () => {
-    expect(password("2")).toBe("2")
-  });
-  it(`should throw password is not Valid`, () => {
+  it(`should should exist`, () => {
+    expect(() => {password('').toThrow("Password should exist")});
+    });
 
-    expect(password("Lkjuhgyf")).toBe("Lkjuhgyf")
-  });
-  it(`should throw password is not Valid`, () => {
-    expect(password("l*dobeatS")).toBe("l*dobeatS")
-  });
- 
-  it(`should return password is Valid`, () => {
-    expect(password("Lavis@97")).toBe("password is valid!")
-  });
- 
-});
+  it( "should be longer than 8 characters", function(){
+    expect(() => {password('Laido').toThrow("password should be longer than 8 characters")})
+    })
+
+  it( "should have at least one lowercase letter", function(){
+    expect(() => {password('THANDOO').toThrow("password should have at least one lowercase letter")})
+    })
+
+  it( "should have at least one uppercase letter", function(){
+    expect(() => {password('lukhanyo').toThrow("password should have at least one uppercase letter")})
+    })
+
+  it( "should have at least one digit", function(){
+    expect(() => {password('Lethabo').toThrow("password should  at least have  one digit")})
+    })
+
+  it( "should have at least one special character", function(){
+    expect(() => {password('Luthando').toThrow("password should have at least one special character")})
+    })
+
+  it( "should meet all the requirements", function(){
+    expect(() => {password('Lukhanyo#@2').toThrow("password is valid")})
+    })
+
+}); 
 
 describe("password is ok function", () => {
   it(`should return true`, () => {
-    expect(passOk("laidobeats")).toBe(true)
+    expect(passOk("Lavisac#19")).toBe(true)
   });
+
   it(`should return false`, () => {
-    expect(passOk("l")).toBe(false)
+    expect(passOk("")).toBe(false)
   });
+
   it(`should return password is never OK`, () => {
-    expect(passOk("")).toBe("password is never OK")
+    expect(passOk("Lavisac")).toBe(`password is never OK`)
   });
-  
+
 });
+
+
+
