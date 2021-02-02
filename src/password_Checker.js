@@ -53,11 +53,4 @@ function passwordStrength(password) {
   }
 }
 
-console.log(passwordStrength("L@idobeats75"));//strong
-console.log(passwordStrength("L@idobeats"));//medium
-console.log(passwordStrength("Lido"));//weak
-console.log(passwordStrength(""));//invalid
-console.log(passwordStrength("20"));//invalid
-console.log(passwordIsValid("L@idobeats75"));//password is valid!
-
 module.exports = { passwordIsValid, passwordStrength };
