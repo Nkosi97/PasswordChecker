@@ -25,7 +25,7 @@ function passwordStrength(password) {
     conditions = conditions + 1;
   }
 
-  if (password.length > 8) {
+  if (password.length >= 8) {
     conditions = conditions + 1;
   }
   if (password.match(/[a-z]/g)) {
