@@ -25,9 +25,13 @@ describe("password is valid function", () => {
     expect(() => {passwordIsValid('Luthando').toThrow("password should have at least one special character")})
     })
 
-  it( "should meet all the requirements", function(){
-    expect(() => {passwordIsValid('Lukhanyo#@2').toThrow("password is valid")})
+  it("should check if password has at least one whitespace character", function () {
+     expect(() => {passwordIsValid('Lukhanyo#@2').toThrow("password should at least have one whitespace character")})
     })
 
+  it( "should meet all the requirements", function(){
+    expect(() => {passwordIsValid('Lukhanyo# @2').toThrow("password is valid")})
+    })
+ 
 }); 
 

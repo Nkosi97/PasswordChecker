@@ -3,7 +3,7 @@ const { passwordStrength } = require("../src/password_Checker");
 
 describe("passwordStrength function", () => {
   it(`should return strong if number of conditions met >= 6`, () => {
-    expect(passwordStrength("L@idobeats75")).toBe(`strong`)
+    expect(passwordStrength("L @idobeats75")).toBe(`strong`)
   });
 
   it(`should return medium if number of conditions met >= 4`, () => {

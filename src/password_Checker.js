@@ -10,6 +10,8 @@ function passwordIsValid(password) {
       throw `password should have atleast one special character`;
     if (!password.match(/[0-9]/g))
       throw `password should have atleast one number`;
+    if (!password.match(/\s/g))
+      throw `password should at least have one whitespace character`;
 
     return `password is valid!`;
   } catch (error) {
@@ -28,6 +30,7 @@ function passwordStrength(password) {
   if (password.length >= 8) {
     conditions = conditions + 1;
   }
+
   if (password.match(/[a-z]/g)) {
     conditions = conditions + 1;
   }
@@ -35,7 +38,7 @@ function passwordStrength(password) {
   if (password.match(/[A-Z]/g)) {
     conditions = conditions + 1;
   }
-  if (password.match(/\W/g)) {
+  if (password.match(/\W/g) && password.match(/\s/g)) {
     conditions = conditions + 1;
   }
   if (password.match(/[0-9]/g)) {
