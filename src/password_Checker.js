@@ -1,6 +1,25 @@
+const winston = require("winston");
+
+const logger = winston.createLogger({
+  level: "error",
+  format: winston.format.json(),
+  defaultMeta: { service: "user-service" },
+  transports: [
+    new winston.transports.Console(),
+    new winston.transports.File({ filename: "logs/error.log" }),
+  ],
+  exceptionHandlers: [
+    new winston.transports.File({ filename: "./logs/error.log" }),
+  ],
+});
+
 function passwordIsValid(password) {
   try {
-    if (password == "") throw `password should exist`;
+    if (password == ""){
+      logger.error('password should exist');
+      throw `password should exist`;
+    } 
+
     if (password.length < 8) throw `password should at least have 8 characters`;
     if (!password.match(/[a-z]/g))
       throw `password should have one lower character`;
@@ -19,7 +38,7 @@ function passwordIsValid(password) {
   }
   return password;
 }
-
+console.log(passwordIsValid(""))
 function passwordStrength(password) {
   let conditions = 0;
 
