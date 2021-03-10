@@ -1,0 +1,25 @@
+{
+  "name": "passwordchecker",
+  "version": "1.0.0",
+  "description": "password-checker (258)\\r For raw project instructions see: https://raw.githubusercontent.com/Umuzi-org/tech-department/master/content/projects/tdd/password-checker/part1/_index.md",
+  "main": "index.js",
+  "dependencies": {
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "jasmine": "^3.6.4"
+  },
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nkosi97/PasswordChecker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nkosi97/PasswordChecker/issues"
+  },
+  "homepage": "https://github.com/Nkosi97/PasswordChecker#readme"
+}
