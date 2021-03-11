@@ -50,7 +50,6 @@ function passwordIsValid(password) {
   return password;
 }
 
-
 function passwordStrength(password) {
   let conditions = 0;
 
@@ -77,12 +76,16 @@ function passwordStrength(password) {
   }
 
   if (conditions >= 6) {
+    console.debug("User password is ok");
     return "strong";
   } else if (conditions >= 4) {
+    console.debug("User password is ok");
     return "medium";
   } else if (conditions >= 3) {
+    console.debug("User password is not ok");
     return "weak";
   } else {
+    console.debug("User password is not ok");
     return "invalid";
   }
 }
