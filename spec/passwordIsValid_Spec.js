@@ -32,6 +32,5 @@ describe("password is valid function", () => {
   it( "should meet all the requirements", function(){
     expect(() => {passwordIsValid('Lukhanyo# @2').toThrow("password is valid")})
     })
- 
 }); 
 
